@@ -18,13 +18,13 @@ COPY certs/id_rsa.pub /root/.ssh/id_rsa.pub
 COPY inventory /etc/ansible/hosts
 
 #phantomjs install
-RUN  mkdir /root/.npm/
-ADD  files/node-sass /root/.npm/
-COPY  files/phantomjs /usr/bin/phantomjs
+#RUN  mkdir /root/.npm/
+#ADD  files/node-sass /root/.npm/
+#COPY  files/phantomjs /usr/bin/phantomjs
 
 RUN echo -e "StrictHostKeyChecking no\nUserKnownHostsFile=/dev/null" >> /root/.ssh/config
-COPY certs/config /root/.ssh/
-RUN chmod 700 /root/.ssh/*
+#COPY certs/config /root/.ssh/
+#RUN chmod 700 /root/.ssh/*
 
 #install python3.6
 RUN apt-get -y install python3.6 python3.6-dev python3.6-venv
