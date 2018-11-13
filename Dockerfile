@@ -13,9 +13,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install wget git curl rsync python
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install ansible
 
 #copy key
-COPY certs/id_rsa /root/.ssh/id_rsa
-COPY certs/id_rsa.pub /root/.ssh/id_rsa.pub
-COPY inventory /etc/ansible/hosts
+#COPY certs/id_rsa /root/.ssh/id_rsa
+#COPY certs/id_rsa.pub /root/.ssh/id_rsa.pub
+#COPY inventory /etc/ansible/hosts
 
 #phantomjs install
 #RUN  mkdir /root/.npm/
