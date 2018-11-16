@@ -1,4 +1,5 @@
 FROM jenkinsci/jnlp-slave
+FROM ubuntu:16.04
 MAINTAINER Andre Aliaman
 
 #install package ansible
