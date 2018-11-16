@@ -31,7 +31,7 @@ COPY inventory /etc/ansible/hosts
 #RUN export JAVA_HOME=/usr/lib/jvm/java-11 > /etc/profile.d/jdk.sh
 #RUN export DERBY_HOME=/usr/lib/jvm/java-11/db > /etc/profile.d/jdk.sh
 #RUN source /etc/profile.d/jdk.sh
-RUN apt-get install openjdk-11-jre openjdk-11-jdk
+RUN add-apt-repository ppa:openjdk-r/ppa && apt-get update -q && apt install -y openjdk-11-jdk
 RUN echo "JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/" >> /etc/environment
 
 #phantomjs install
