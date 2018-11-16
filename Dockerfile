@@ -55,9 +55,10 @@ RUN \
    groff \
    p7zip-full
 
-#install go
-RUN wget https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz
-RUN tar -xvf go1.10.3.linux-amd64.tar.gz && mv go /usr/local && rm -rf go1.10.3.linux-amd64.tar.gz
+#install go 1.11
+#RUN wget https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz
+RUN wget https://dl.google.com/go/go1.11.linux-amd64.tar.gz
+RUN tar -xvf go1.11.linux-amd64.tar.gz && mv go /usr/local && rm -rf go1.11.linux-amd64.tar.gz
 
 #setup go environment
 RUN export GOROOT=/usr/local/go
