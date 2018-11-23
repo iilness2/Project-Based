@@ -18,20 +18,7 @@ COPY certs/id_rsa.pub /root/.ssh/id_rsa.pub
 COPY inventory /etc/ansible/hosts
 
 #java openjdk11
-#RUN dpkg -i jdk-11_linux-x64_bin.deb
-#RUN update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-11/bin/java 2
-#RUN update-alternatives --config java
-#RUN update-alternatives --install /usr/bin/jar jar /usr/lib/jvm/jdk-11/bin/jar 2
-#RUN update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk-11/bin/javac 2
-#RUN update-alternatives --set jar /usr/lib/jvm/jdk-11/bin/jar
-#RUN update-alternatives --set javac /usr/lib/jvm/jdk-11/bin/javac
-#RUN export J2SDKDIR=/usr/lib/jvm/java-11 > /etc/profile.d/jdk.sh
-#RUN export J2REDIR=/usr/lib/jvm/java-11 > /etc/profile.d/jdk.sh
-#RUN export PATH=$PATH:/usr/lib/jvm/java-11/bin:/usr/lib/jvm/java-11/db/bin > /etc/profile.d/jdk.sh
-#RUN export JAVA_HOME=/usr/lib/jvm/java-11 > /etc/profile.d/jdk.sh
-#RUN export DERBY_HOME=/usr/lib/jvm/java-11/db > /etc/profile.d/jdk.sh
-#RUN source /etc/profile.d/jdk.sh
-RUN add-apt-repository ppa:openjdk-r/ppa && apt-get update -q && apt install -y openjdk-11-jdk
+RUN add-apt-repository ppa:openjdk-r/ppa && apt-get update && apt install -y openjdk-11-jdk
 RUN echo "JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/" >> /etc/environment
 
 #phantomjs install
