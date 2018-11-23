@@ -21,11 +21,6 @@ COPY inventory /etc/ansible/hosts
 RUN add-apt-repository ppa:openjdk-r/ppa && apt-get update && apt install -y openjdk-11-jdk
 RUN echo "JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/" >> /etc/environment
 
-#phantomjs install
-#RUN  mkdir /root/.npm/
-#ADD  files/node-sass /root/.npm/
-#COPY  files/phantomjs /usr/bin/phantomjs
-
 RUN echo -e "StrictHostKeyChecking no\nUserKnownHostsFile=/dev/null" >> /root/.ssh/config
 COPY certs/config /root/.ssh/
 RUN chmod 700 /root/.ssh/*
@@ -88,7 +83,3 @@ RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
 #clear all cache
 RUN apt-get clean
-
-COPY --from=jenkins/jnlp-slave:latest /usr/local/bin/jenkins-slave /usr/local/bin/jenkins-slave
-
-ENTRYPOINT ["jenkins-slave"]
